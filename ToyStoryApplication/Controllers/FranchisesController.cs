@@ -20,6 +20,24 @@ namespace ToyStoryApplication.Controllers
             return View(db.Franchise.ToList());
         }
 
+        public ActionResult _Indexpartial(int? id)
+        {
+            Franchise franchise = db.Franchise.Single(m => m.Id == id);
+            return PartialView(franchise);
+        }
+
+        [HttpPost]
+        public ActionResult Like(int? id)
+        {
+            Franchise franchise = db.Franchise.Single(m => m.Id == id);
+            if (franchise == null)
+                return HttpNotFound();
+            int currentLikes = franchise.Count;
+            franchise.Count = currentLikes + 1;
+            db.SaveChanges();
+            return PartialView("_Indexpartial", franchise);
+        }
+
         // GET: Franchises/Details/5
         public ActionResult Details(int? id)
         {
