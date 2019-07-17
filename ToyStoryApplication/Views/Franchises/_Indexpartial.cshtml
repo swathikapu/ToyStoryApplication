@@ -1,7 +1,7 @@
 ﻿@model ToyStoryApplication.Models.Franchise
 
 <td>
-    @Html.DisplayFor(modelItem => Model.Logo)
+    <img src="~/Content/Images/@Html.DisplayFor(m => Model.Logo)" width="50px" />
 </td>
 <td>
     @Html.DisplayFor(modelItem => Model.Name)
@@ -9,7 +9,7 @@
 <td>
     @Html.DisplayFor(modelItem => Model.Origin)
 </td>
-<td>
+<td>s
     @Html.DisplayFor(modelItem => Model.Type)
 </td>
 <td>

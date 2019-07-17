@@ -156,6 +156,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FranchiseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\FranchiseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
