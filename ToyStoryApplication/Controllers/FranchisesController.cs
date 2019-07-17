@@ -92,21 +92,28 @@ namespace ToyStoryApplication.Controllers
             return View(franchise);
         }
 
-
         // POST: Franchises/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Logo,Name,Origin,Type,FirstAppearance,CreatedBy,Count")] Franchise franchise)
+        public ActionResult Edit(Franchise franchise)
         {
+            Franchise franchiseInDb = db.Franchise.Single(x => x.Id == franchise.Id);
+            franchiseInDb.Logo = franchise.Logo;
+            franchiseInDb.Name = franchise.Name;
+            franchiseInDb.Origin = franchise.Origin;
+            franchiseInDb.Type = franchise.Type;
+            franchiseInDb.FirstAppearance = franchise.FirstAppearance;
+            franchiseInDb.CreatedBy = franchise.CreatedBy;
+            TryUpdateModel(franchiseInDb);
             if (ModelState.IsValid)
             {
-                db.Entry(franchise).State = EntityState.Modified;
+                db.Entry(franchiseInDb).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(franchise);
+            return View(franchiseInDb);
         }
 
         // GET: Franchises/Delete/5

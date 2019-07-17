@@ -39,6 +39,7 @@ namespace ToyStoryApplication.Models
         [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$", ErrorMessage = "Please enter alphabets only")]
         public string CreatedBy { get; set; }
         
+        [DisplayName("Likes")]
         public int Count { get; set; }
     }
 }
