@@ -111,7 +111,8 @@ namespace ToyStoryApplication.Controllers
         public ActionResult Edit(Franchise franchise)
         {
             Franchise franchiseInDb = db.Franchise.Single(x => x.Id == franchise.Id);
-            franchiseInDb.Logo = franchise.Logo;
+            if(franchise.Logo != null)
+                franchiseInDb.Logo = franchise.Logo;
             franchiseInDb.Name = franchise.Name;
             franchiseInDb.Origin = franchise.Origin;
             franchiseInDb.Type = franchise.Type;
