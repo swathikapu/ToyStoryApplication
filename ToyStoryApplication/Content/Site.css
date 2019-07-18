@@ -23,3 +23,22 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.image-upload{
+    margin-left:30px;
+}
+
+input[type="file"]
+{
+    display:inline;
+}
+
+.logo-div {
+    display: inline-block;
+}
+
+.details-div
+{
+    display:inline-block;
+    vertical-align:middle;
+}

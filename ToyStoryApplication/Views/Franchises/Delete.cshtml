@@ -11,63 +11,65 @@
     <h4>Franchise</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Logo)
-        </dt>
+        <div class="logo-div">
 
-        <dd>
-            @Html.DisplayFor(model => model.Logo)
-        </dd>
+            <dd>
+                <img src="@Url.Content(Model.Logo)" width="200" height="200" />
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+        <div class="details-div">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Origin)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Origin)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Origin)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Origin)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstAppearance)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstAppearance)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstAppearance)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FirstAppearance)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedBy)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Count)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedBy)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Count)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Count)
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.Count)
+            </dd>
+        </div>
     </dl>
+
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()

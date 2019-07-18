@@ -24,7 +24,7 @@ namespace ToyStoryApplication.Models
         public int FirstAppearance { get; set; }
 
         [DisplayFormat(NullDisplayText = "logo is not specified")]
-        [DisplayName("Upload File...")]
+        [DisplayName("Upload File")]
         public string Logo { get; set; }
 
         [Required(ErrorMessage = "Please enter the Name")]
