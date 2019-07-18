@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -65,10 +66,20 @@ namespace ToyStoryApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Logo,Name,Origin,Type,FirstAppearance,CreatedBy,Count")] Franchise franchise)
+        public ActionResult Create(Franchise franchise)
         {
             if (ModelState.IsValid)
             {
+                //To get the url of the image brought from the view
+                string imagename = Path.GetFileNameWithoutExtension(franchise.ImageFile.FileName);
+                string extension = Path.GetExtension(franchise.ImageFile.FileName);
+                //DateTime below to avoid duplicate name of image    DateTime.Now.ToString("yymmssfff") 
+                imagename = imagename + extension;
+                franchise.Logo = "~/Content/Images/" + imagename;
+                //To save it to to the server 
+                imagename = Path.Combine(Server.MapPath("~/Content/Images/"), imagename);
+                franchise.ImageFile.SaveAs(imagename);
+               
                 db.Franchise.Add(franchise);
                 db.SaveChanges();
                 return RedirectToAction("Index");

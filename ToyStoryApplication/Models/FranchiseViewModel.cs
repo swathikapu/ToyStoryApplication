@@ -11,6 +11,9 @@ namespace ToyStoryApplication.Models
     [MetadataType(typeof(FranchiseMetaData))]
     public partial class Franchise
     {
+        //the following proprety is added to upload image
+        public HttpPostedFileBase ImageFile { get; set; }
+        //after the above, go to view, using razer, add the <input type="file" name="ImageFile" required>
     }
 
     public class FranchiseMetaData
@@ -21,6 +24,7 @@ namespace ToyStoryApplication.Models
         public int FirstAppearance { get; set; }
 
         [DisplayFormat(NullDisplayText = "logo is not specified")]
+        [DisplayName("Upload File...")]
         public string Logo { get; set; }
 
         [Required(ErrorMessage = "Please enter the Name")]
@@ -39,7 +43,9 @@ namespace ToyStoryApplication.Models
         [RegularExpression(@"^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$", ErrorMessage = "Please enter alphabets only")]
         public string CreatedBy { get; set; }
         
+
         [DisplayName("Likes")]
         public int Count { get; set; }
+
     }
 }
