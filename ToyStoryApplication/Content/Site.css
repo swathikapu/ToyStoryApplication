@@ -1,7 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-   
+    background-image: url("~/Content/Images/backgroung.jpg");
+    background-color: #817A79
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -41,4 +43,22 @@ input[type="file"]
 {
     display:inline-block;
     vertical-align:middle;
+}
+
+.create-image {
+    display: inline-block;
+    width: 200px;
+    margin-top: 440px;
+}
+
+.creates-image 
+{
+    display:inline-block;
+    width:600px;
+    margin-top:300px;
+}
+
+.create-body
+{
+    margin-top:-390px;
 }

@@ -68,18 +68,12 @@ namespace ToyStoryApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Franchise franchise)
         {
+            TryUpdateModel(franchise);
             if (ModelState.IsValid)
             {
-                //To get the url of the image brought from the view
-                string imagename = Path.GetFileNameWithoutExtension(franchise.ImageFile.FileName);
-                string extension = Path.GetExtension(franchise.ImageFile.FileName);
-                //DateTime below to avoid duplicate name of image    DateTime.Now.ToString("yymmssfff") 
-                imagename = imagename + extension;
-                franchise.Logo = "~/Content/Images/" + imagename;
-                //To save it to to the server 
-                imagename = Path.Combine(Server.MapPath("~/Content/Images/"), imagename);
-                franchise.ImageFile.SaveAs(imagename);
-               
+                string imagePath = "~/Content/Images/" + franchise.ImageFile.FileName;
+                franchise.Logo = imagePath;
+                franchise.ImageFile.SaveAs(Server.MapPath(imagePath));
                 db.Franchise.Add(franchise);
                 db.SaveChanges();
                 return RedirectToAction("Index");
