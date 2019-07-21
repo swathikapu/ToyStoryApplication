@@ -11,21 +11,20 @@ namespace ToyStoryApplication.Models
     [MetadataType(typeof(FranchiseMetaData))]
     public partial class Franchise
     {
-        //the following proprety is added to upload image
-        [Required(ErrorMessage = "Please upload a logo image")]
         public HttpPostedFileBase ImageFile { get; set; }
-        //after the above, go to view, using razer, add the <input type="file" name="ImageFile" required>
     }
 
     public class FranchiseMetaData
     {
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Please upload a logo image")]
+        public HttpPostedFileBase ImageFile { get; set; }
+
         [DisplayName("Year")]
         [Required(ErrorMessage = "Please enter the year of first appearance")]
-        [RegularExpression(@"^\b[1-9]\d{3}\b", ErrorMessage = "Please enter digitss only")]
+        [RegularExpression(@"^\b[1-9]\d{3}\b", ErrorMessage = "Please enter digits only")]
         public int FirstAppearance { get; set; }
 
         [DisplayFormat(NullDisplayText = "logo is not specified")]
-        //[Required(ErrorMessage = "Please upload a logo image")]
         public string Logo { get; set; }
 
         [Required(ErrorMessage = "Please enter the toy name")]
