@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "Edit";
 }
-@using (Html.BeginForm())
+
+<h4>Edit @Model.Name Franchise</h4>
+@using (Html.BeginForm("Edit", "Franchises", FormMethod.Post, new { enctype = "multipart/form-data", id = "editForm" }))
 {
     @Html.AntiForgeryToken()
     

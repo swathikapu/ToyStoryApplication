@@ -19,9 +19,6 @@
     @Html.DisplayFor(modelItem => Model.CreatedBy)
 </td>
 <td>
-    @Html.DisplayFor(modelItem => Model.Count)
-</td>
-<td>
     @using (Ajax.BeginForm(
         actionName:"Like",
         controllerName: "Franchises",
@@ -33,7 +30,7 @@
         }
      ))
     {
-        <input type="submit" value="Like" id="likeButton" class="fa fa-input fa-2x btn btn-default" style="background-color:#fce77d"/>
+        <input type="submit" value=@Model.Count.ToString() id="likeButton" class="fa fa-input fa-2x btn btn-default" style="background-color:#fce77d"/>
     }
 </td>
 

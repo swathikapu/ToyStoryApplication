@@ -103,8 +103,16 @@ namespace ToyStoryApplication.Controllers
         public ActionResult Edit(Franchise franchise)
         {
             Franchise franchiseInDb = db.Franchise.Single(x => x.Id == franchise.Id);
-            if (franchise.Logo != null)
-                franchiseInDb.Logo = franchise.Logo;
+            try
+            {
+                string imagePath = "~/Content/Images/" + franchise.ImageFile.FileName;
+                franchiseInDb.Logo = imagePath;
+                franchiseInDb.ImageFile.SaveAs(Server.MapPath(imagePath));
+            }
+            catch(NullReferenceException)
+            {
+                // No new image file choosen by the user.
+            }
             franchiseInDb.Name = franchise.Name;
             franchiseInDb.Origin = franchise.Origin;
             franchiseInDb.Type = franchise.Type;

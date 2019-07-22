@@ -16,7 +16,6 @@ namespace ToyStoryApplication.Models
 
     public class FranchiseMetaData
     {
-
         [DisplayName("Year")]
         [Required(ErrorMessage = "Please enter the year of first appearance")]
         [RegularExpression(@"^\b[1-9]\d{3}\b", ErrorMessage = "Please enter digits only")]
