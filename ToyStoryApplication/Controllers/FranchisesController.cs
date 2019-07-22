@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -60,20 +59,15 @@ namespace ToyStoryApplication.Controllers
             return View();
         }
 
-
         // POST: Franchises/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Franchise franchise)
+        public ActionResult Create([Bind(Include = "Id,Logo,Name,Origin,Type,FirstAppearance,CreatedBy,Count")] Franchise franchise)
         {
-            TryUpdateModel(franchise);
             if (ModelState.IsValid)
             {
-                string imagePath = "~/Content/Images/" + franchise.ImageFile.FileName;
-                franchise.Logo = imagePath;
-                franchise.ImageFile.SaveAs(Server.MapPath(imagePath));
                 db.Franchise.Add(franchise);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -105,7 +99,7 @@ namespace ToyStoryApplication.Controllers
         public ActionResult Edit(Franchise franchise)
         {
             Franchise franchiseInDb = db.Franchise.Single(x => x.Id == franchise.Id);
-            if(franchise.Logo != null)
+            if (franchise.Logo != null)
                 franchiseInDb.Logo = franchise.Logo;
             franchiseInDb.Name = franchise.Name;
             franchiseInDb.Origin = franchise.Origin;
@@ -121,7 +115,6 @@ namespace ToyStoryApplication.Controllers
             }
             return View(franchiseInDb);
         }
-
         // GET: Franchises/Delete/5
         public ActionResult Delete(int? id)
         {

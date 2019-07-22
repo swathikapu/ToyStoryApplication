@@ -1,7 +1,7 @@
 ﻿@model ToyStoryApplication.Models.Franchise
 
 <td>
-    <img src="@Url.Content(Model.Logo)" width="100" height="100" />
+    <img src="@Url.Content(Model.Logo)" width="70" height="70" />
 </td>
 <td>
     @Html.DisplayFor(modelItem => Model.Name)
@@ -33,7 +33,7 @@
         }
      ))
     {
-        <input type="image" src="~/Content/Images/like2.png" value="&#xf164" id="likeButton" class="fa fa-input fa-2x btn btn-default"  style="width:40%;"/>
+        <input type="submit" value="&#xf164" id="likeButton" class="fa fa-input fa-2x btn btn-default"/>
     }
 </td>
 
