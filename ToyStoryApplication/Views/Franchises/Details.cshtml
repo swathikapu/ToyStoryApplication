@@ -4,9 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h3>@Model.Name Franchise Details</h3>
+<h4 class="yellow-text">@Model.Name Franchise Details</h4>
+<br />
 <dl class="dl-horizontal">
-
     <div class="logo-div">
 
         <dd>
@@ -14,8 +14,7 @@
         </dd>
 
     </div>
-    <div class="details-div">
-
+    <div class="details-div yellow-text">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -64,8 +63,7 @@
             @Html.DisplayFor(model => model.Count)
         </dd>
         </div>
-
-    </dl>
+</dl>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

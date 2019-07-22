@@ -14,11 +14,15 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
+
+/*input {
+    max-width: 320px;
+}*/
 
 .image-upload{
     margin-left:30px;
@@ -31,10 +35,60 @@ input[type="file"]
 
 .logo-div {
     display: inline-block;
+    width: 320px;
 }
 
 .details-div
 {
     display:inline-block;
     vertical-align:middle;
+}
+
+.edit-div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+a {
+    color: #F96167;
+    background-color: #fce77d;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+input[type=submit] {
+    color: #F96167;
+    background-color:#fce77d;
+    padding: 4px;
+    border-radius: 3px;
+    position:relative;
+    top: -4px;
+}
+
+input[type=file] {
+    color: #F96167;
+    background-color: #fce77d;
+    padding: 4px;
+    border-radius: 3px;
+    position: relative;
+    top: -4px;
+    width:200px;
+}
+
+
+.yellow-text {
+    color: #fce77d;
+}
+
+.form-group input[type=submit] {
+    position: relative;
+    float: right;
+}
+
+.form-group{
+    width:320px;
+}
+
+.edit-form{
+    text-align:center;
 }
