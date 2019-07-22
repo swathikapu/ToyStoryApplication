@@ -60,8 +60,6 @@ namespace ToyStoryApplication.Controllers
         }
 
         // POST: Franchises/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Franchise franchise)
@@ -96,13 +94,13 @@ namespace ToyStoryApplication.Controllers
         }
 
         // POST: Franchises/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Franchise franchise)
         {
             Franchise franchiseInDb = db.Franchise.Single(x => x.Id == franchise.Id);
+            // if the user gives a new image file, update the franchise
+            // in database with the given image.
             try
             {
                 string imagePath = "~/Content/Images/" + franchise.ImageFile.FileName;
@@ -127,6 +125,7 @@ namespace ToyStoryApplication.Controllers
             }
             return View(franchiseInDb);
         }
+
         // GET: Franchises/Delete/5
         public ActionResult Delete(int? id)
         {
