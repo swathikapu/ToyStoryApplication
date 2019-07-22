@@ -64,10 +64,14 @@ namespace ToyStoryApplication.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Logo,Name,Origin,Type,FirstAppearance,CreatedBy,Count")] Franchise franchise)
+        public ActionResult Create(Franchise franchise)
         {
+            TryUpdateModel(franchise);
             if (ModelState.IsValid)
             {
+                string imagePath = "~/Content/Images/" + franchise.ImageFile.FileName;
+                franchise.Logo = imagePath;
+                franchise.ImageFile.SaveAs(Server.MapPath(imagePath));
                 db.Franchise.Add(franchise);
                 db.SaveChanges();
                 return RedirectToAction("Index");

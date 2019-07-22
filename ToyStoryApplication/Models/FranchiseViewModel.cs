@@ -16,8 +16,6 @@ namespace ToyStoryApplication.Models
 
     public class FranchiseMetaData
     {
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Please upload a logo image")]
-        public HttpPostedFileBase ImageFile { get; set; }
 
         [DisplayName("Year")]
         [Required(ErrorMessage = "Please enter the year of first appearance")]
