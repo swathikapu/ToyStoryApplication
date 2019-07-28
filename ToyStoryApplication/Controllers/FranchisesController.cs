@@ -98,12 +98,16 @@ namespace ToyStoryApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Franchise franchise)
         {
+            // We dont want count/ empty image from the edited franchise, so using the id of the
+            // edited franchise, we are retrieving the record from database and applying
+            // all the changes except count/ empty image.
             Franchise franchiseInDb = db.Franchise.Single(x => x.Id == franchise.Id);
             // if the user gives a new image file, update the franchise
             // in database with the given image.
             try
             {
-                string imagePath = "~/Content/Images/" + franchise.ImageFile.FileName;
+                franchiseInDb.ImageFile = franchise.ImageFile;
+                string imagePath = "~/Content/Images/" + franchiseInDb.ImageFile.FileName;
                 franchiseInDb.Logo = imagePath;
                 franchiseInDb.ImageFile.SaveAs(Server.MapPath(imagePath));
             }
