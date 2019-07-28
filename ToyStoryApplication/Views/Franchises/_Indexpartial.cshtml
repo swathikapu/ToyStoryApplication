@@ -18,7 +18,7 @@
 <td>
     @Html.DisplayFor(modelItem => Model.CreatedBy)
 </td>
-<td>
+<td data-sort="@Model.Count">
     @using (Ajax.BeginForm(
         actionName:"Like",
         controllerName: "Franchises",
