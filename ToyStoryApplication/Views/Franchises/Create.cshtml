@@ -8,7 +8,7 @@
 @using (Html.BeginForm("Create", "Franchises", FormMethod.Post, new { enctype = "multipart/form-data", id="createForm" }))
 {
     @Html.AntiForgeryToken()
-    <div class="form-horizontal yellow-text">
+    <div class="form-horizontal">
         <h4>Create New Franchise</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
