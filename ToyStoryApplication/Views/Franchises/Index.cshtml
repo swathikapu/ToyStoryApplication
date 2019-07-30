@@ -5,10 +5,10 @@
 }
 <br />
 <p>
-    @Html.ActionLink("Create New Franchise", "Create")
+    @Html.ActionLink("Create New Franchise", "Create",new { } ,new { @class = "btn btn-outline-warning", style = "background-color:#68829e" })
 </p>
 <table class="table table-hover table-striped" id="franchiseTable">
-    <thead style="background-color:#fec810">
+    <thead style="background-color:#a5c05b;">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Logo)

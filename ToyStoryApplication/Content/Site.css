@@ -50,19 +50,18 @@ input[type="file"]
 }
 
 a {
-    color: #000000;
-    background-color: #fec810;
+    color: #fff;
     padding: 4px;
     border-radius: 3px;
 }
 
-input[type=submit] {
-    color: #000000;
-    background-color: #fec810;
-    padding: 4px;
-    border-radius: 3px;
-    position: relative;
-    top: -4px;
+input#likeButton {
+    background: #3a5199 url('Images/like_icon.png') no-repeat;
+    color: #fff;
+    padding-left: 31px;
+    background-size: 24px;
+    background-position-y: 2px;
+    background-position-x: 6px;
 }
 
 input[type=file] {

@@ -30,12 +30,12 @@
         }
      ))
     {
-        <input type="submit" value=@Model.Count.ToString() id="likeButton" class="fa fa-input fa-2x btn btn-default"/>
+        <input type="submit" value=@Model.Count.ToString() id="likeButton" class="fa fa-input fa-2x btn btn-outline-warning"/>
     }
 </td>
 
 <td>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
-    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-outline-warning", style = "background-color:#006c84" })
+    @Html.ActionLink("Details", "Details", new { id = Model.Id }, new { @class = "btn btn-outline-warning", style = "background-color:#128277" })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-outline-warning", style = "background-color:#b2473e" })
 </td>
