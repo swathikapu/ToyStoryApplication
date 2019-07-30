@@ -16,7 +16,7 @@
             @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @*name="ImageFile" will bind this input to the property created in class*@
-                <input type="file" name="ImageFile" required>
+                <input type="file" name="ImageFile" required class="btn btn-primary btn-sm float-left">
                 @Html.ValidationMessageFor(model => model.ImageFile, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -64,14 +64,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary btn-sm yellow-btn" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to Franchises", "Index")
+    @Html.ActionLink("Back to Franchises", "Index", new { }, new { @class = "btn btn-primary btn-sm yellow-btn" })
 </div>
 
 @section Scripts {

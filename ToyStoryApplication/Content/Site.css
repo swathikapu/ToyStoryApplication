@@ -50,7 +50,8 @@ input[type="file"]
 }
 
 a {
-    color: #fff;
+    background-color: #fec810;
+    color: white;
     padding: 4px;
     border-radius: 3px;
 }
@@ -78,6 +79,12 @@ input[type=file] {
 .yellow-text {
     color: #fec810;
 }
+
+.yellow-btn {
+    background-color: #fec810;
+    color: black;
+}
+
 
 .form-group input[type=submit] {
     position: relative;
