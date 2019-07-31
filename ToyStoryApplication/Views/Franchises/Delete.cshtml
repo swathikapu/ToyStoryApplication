@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Delete";
 }
-<h4>Are you sure you want to delete @Model.Name ?</h4>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <dl class="dl-horizontal">
+    <h3 class="text-danger">Delete @Model.Name Franchise?</h3>
+    <dl class="dl-horizontal" style="margin-top:30px">
         <div class="logo-div">
             <dd>
                 <img src="@Url.Content(Model.Logo)" width="200" height="200" />
@@ -62,13 +63,19 @@
                 @Html.DisplayFor(model => model.Count)
             </dd>
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Delete" class="btn btn-primary btn-sm yellow-btn" />
+                <div class="col-md-offset-2 col-md-10" style="margin-top:10px">
+                    <input type="submit" value="Delete" class="btn btn-primary btn-sm deleteButton" />
+                    @Html.ActionLink(
+                        "Back",
+                        "Index",
+                        new { },
+                        new {
+                            @class = "btn btn-primary btn-sm backButton",
+                        }
+                    )
+
                 </div>
             </div>
         </div>
     </dl>
 }
-<div class="form-actions no-color">
-    @Html.ActionLink("Back to List", "Index", new { }, new { @class = "btn btn-primary btn-sm yellow-btn" })
-</div>
