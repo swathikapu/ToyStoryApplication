@@ -64,6 +64,32 @@ input#likeButton {
     background-position-y: 2px;
     background-position-x: 6px;
 }
+.deleteButton {
+    background: url('Images/delete_white.png') no-repeat;
+    color: #fff;
+    padding-left: 25px;
+    background-size: 18px;
+    background-position-y: 5.5px;
+    background-position-x: 7px;
+}
+
+.editButton {
+    background: url('Images/edit_white.png') no-repeat;
+    color: #fff;
+    padding-left: 31px;
+    background-size: 24px;
+    background-position-y: 3px;
+    background-position-x: 6px;
+}
+
+.detailsButton {
+    background: url('Images/details_white.png') no-repeat;
+    color: #fff;
+    padding-left: 26px;
+    background-size: 18px;
+    background-position-y: 7px;
+    background-position-x: 9px;
+}
 
 input[type=file] {
     color: #000;
