@@ -163,3 +163,53 @@ input[type=file] {
 .create-form {
     text-align: center;
 }
+
+/* all mobile phones */
+@media only screen and (max-width: 768px) {
+
+    .logo-media {
+        margin-left: 10vw;
+    }
+    .video-link {
+        margin-top: 20px;
+        margin-left: 0vw;
+    }
+
+    .details-media {
+        margin-top: 20px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .video-link{
+        margin-top:20px;
+        margin-left: 20vw;
+    }
+
+    .details-media{
+        margin-top: 35px;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .centre-container{
+        padding-left: 100px;
+    }
+
+    .video-link {
+        margin-top: 0px;
+        margin-left: 0vw;
+    }
+
+    .details-media {
+        margin-top: 0px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+} 
